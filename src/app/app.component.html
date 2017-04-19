@@ -1,3 +1,24 @@
-<h1>
-  {{title}}
-</h1>
+<nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/products">Products</a>
+</nav>
+
+<h1 highlight>Angular App</h1>
+<p highlight>Our Product web page..</p>
+
+<h1>{{title}}</h1>
+
+<!--View Container-->
+<router-outlet></router-outlet>
+<!--
+<home>
+    
+</home>
+
+<about [title]="getTitle('Sandeep')"
+    [branches]="['Bengaluru', 'Pune']"
+>
+</about>
+
+<product-list></product-list>-->

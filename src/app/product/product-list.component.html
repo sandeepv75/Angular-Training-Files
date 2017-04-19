@@ -1,0 +1,35 @@
+<h2>Product List</h2>
+
+<button (click)="fetchProducts()">Fetch</button>
+
+<input [(ngModel)]="year"/>
+Filtering By {{year}}
+
+<div class="flex two">
+    <div *ngFor="let product of (products | byYear: year); let i=index; let k = odd; trackBy:trackByProduct">
+        {{i}} - {{k}}
+        <article class="card">
+            <header>
+                {{product.name}}
+            </header>
+
+            <p>Year: {{product.year}}</p>
+            <p>Price: {{product.price | currency: "INR"}}</p>
+            <p>Date: {{product.released | date: "fullDate" | uppercase}}</p>
+            
+            <footer>
+                <like-widget [(likes1)]="product.likes1"
+                    (likesChanged) = "likesChangedHandler($event)">
+                </like-widget>
+                <a class="button success"routerLink="/products/edit/{{product.id}}">Edit</a>
+            </footer>
+        </article>
+
+
+        
+    </div>
+</div>
+<!-- Another way for 2 way binding
+    [likes1]="product.likes1"
+                    (likes1Change) = "product.likes1=$event"
+-->

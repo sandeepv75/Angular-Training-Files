@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "assets/picnic.css",
+        "assets/styles.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

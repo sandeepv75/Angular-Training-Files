@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    moduleId: module.id,
+    selector: 'product-app',
+    templateUrl: "app.component.html"
 })
+
 export class AppComponent {
-  title = 'app works!';
+    title: string = "Product App";
+
+    aboutTitle: string = "About from App";
+
+    getTitle(title:string){
+        return `${title} from App`
+    }
 }

@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+<h2>Branches</h2>
+
+<ul>
+    <li *ngFor = "let branch of branches">
+        {{branch}}
+    </li>
+</ul>
+
+
+<button (click)="showHide()">Show/Hide</button>
+
+<input #memberName/>
+<button (click)="addMember(memberName.value); memberName.value=''">Add</button>
+
+<ul *ngIf="showMembers">
+    <li *ngFor="let name of members">
+        {{name}}
+    </li>
+</ul>
+
+<h2>Likes</h2>
+<span class="success">{{likes * 1000}}</span>
+
+<button (click)="likesClicked(1)">+1</button>
+
+<button (click)="likesClicked(-1)">-1</button>
+
+{{address?.street}}
